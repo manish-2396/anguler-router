@@ -45,7 +45,7 @@ export class SinglePostComponent implements OnInit {
     fetch(`https://dummyjson.com/products/${this.id1}`)
       .then((res: any) => res.json())
       .then((res: any) => {
-        console.log(res)
+        console.log(res);
         this.data = res;
       });
   }

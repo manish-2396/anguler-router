@@ -1,14 +1,16 @@
-
-
 <div class="Box">
   <div>
     <img src="{{ data.thumbnail }}" />
     <br />
     <h5>{{ data.title }}</h5>
     <div class="price">
-        <div> <p>{{ data.price | currency}}  </p></div>
-        <div> <p>{{ data.discountPercentage }}</p></div>
+      <div>
+        <p>{{ data.price | currency }}</p>
+      </div>
+      <div>
+        <p>{{ data.discountPercentage }}</p>
+      </div>
     </div>
-    <p>{{data.description}}</p>
+    <p>{{ data.description }}</p>
   </div>
 </div>
