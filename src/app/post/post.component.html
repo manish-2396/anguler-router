@@ -1,0 +1,14 @@
+<div class="Box">
+  <div *ngFor="let data of datas">
+    <a routerLink='single/{{data.id}}'>
+      <img src="{{ data.avatar }}" />
+      <h5>{{ data.first_name }} {{ data.last_name }}</h5>
+    </a>
+  </div>
+</div>
+
+<div class="count">
+  <button (click)="handledcrese()">-</button>
+  {{ count }}
+  <button (click)="handleincrease()">+</button>
+</div>
