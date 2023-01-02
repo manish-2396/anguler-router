@@ -1,13 +1,14 @@
-<button>
-  <a routerLink="/"> back</a>
-</button>
+
 
 <div class="Box">
   <div>
-    <p>single-post id :- {{ id1 }}</p>
-    <img src="{{ data.avatar }}" />
+    <img src="{{ data.thumbnail }}" />
     <br />
-    <h5>{{ data.first_name }} {{ data.last_name }}</h5>
-    <p>{{ data.email }}</p>
+    <h5>{{ data.title }}</h5>
+    <div class="price">
+        <div> <p>{{ data.price | currency}}  </p></div>
+        <div> <p>{{ data.discountPercentage }}</p></div>
+    </div>
+    <p>{{data.description}}</p>
   </div>
 </div>

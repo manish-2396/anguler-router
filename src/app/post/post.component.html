@@ -1,8 +1,9 @@
 <div class="Box">
   <div *ngFor="let data of datas">
-    <a routerLink='single/{{data.id}}'>
-      <img src="{{ data.avatar }}" />
-      <h5>{{ data.first_name }} {{ data.last_name }}</h5>
+    <a routerLink="single/{{ data.id }}">
+      <img src="{{ data.thumbnail }}" />
+      <h5>{{ data.title }}</h5>
+      <p>{{ data.price | currency }}</p>
     </a>
   </div>
 </div>

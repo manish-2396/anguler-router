@@ -2,11 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 interface database {
-  avatar: string;
-  email: string;
-  first_name: string;
+  brand: string;
+  category: string;
+  description: string;
+  discountPercentage: number;
   id: number;
-  last_name: string;
+  price: number;
+  rating: number;
+  stock: number;
+  thumbnail: string;
+  title: string;
 }
 
 @Component({
@@ -15,14 +20,19 @@ interface database {
   styleUrls: ['./single-post.component.sass'],
 })
 export class SinglePostComponent implements OnInit {
-  id1: string|null = "";
+  id1: string | null = '';
 
   data: database = {
-    avatar: '',
-    email: '',
-    first_name: '',
+    brand: '',
+    category: '',
+    description: '',
+    discountPercentage: 0,
     id: 0,
-    last_name: '',
+    price: 0,
+    rating: 0,
+    stock: 0,
+    thumbnail: '',
+    title: '',
   };
 
   constructor(private route: ActivatedRoute) {}
@@ -30,12 +40,13 @@ export class SinglePostComponent implements OnInit {
   ngOnInit(): void {
     this.id1 = this.route.snapshot.paramMap.get('id');
 
-    console.log(typeof(this.id1))
+    console.log(typeof this.id1);
 
-    fetch(`https://reqres.in/api/users/${this.id1}`)
+    fetch(`https://dummyjson.com/products/${this.id1}`)
       .then((res: any) => res.json())
       .then((res: any) => {
-        this.data = res.data;
+        console.log(res)
+        this.data = res;
       });
   }
 }
